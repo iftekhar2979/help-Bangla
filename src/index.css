@@ -11,3 +11,110 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+a{
+  text-decoration: none;
+}
+
+/* navbar design */
+a.h5.text-dark.nav-link:hover{
+  background: gray;
+  color: white;
+  /* background: gray; */
+}
+nav.navbar.navbar-expand {
+  background-color: thistle;
+}
+a.p-2.h5.m-1.text-dark:hover {
+  background: #ceb2ce;
+  border-radius: 6px;
+}
+
+
+/* second banner */
+.hero {
+  min-height:80vh;
+  background: #000 url(https://images.unsplash.com/photo-1473649085228-583485e6e4d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80) center center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero:before {
+  content:"";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to top, rgba(0,25,35,0.8) 0%, rgba(0,0,0,0.2) 100%);
+}
+.hero-content {
+  position: relative;
+  bottom: 0px;
+  color: #fff;
+}
+
+/* second banner card */
+
+.h1.text-center.card-title.h5 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.forHover:hover{
+  background-color: #F7B103;
+  cursor: pointer;
+  border-radius: 10px;
+  transform: scale(5px);
+}
+/* option BAnner*/
+.option-img{
+  height: 8rem;
+  width: 10rem;
+}
+.text-colored {
+  color: cornsilk;
+}
+/* login color bg */
+section.vh-100.bg-muted {
+  background-color: azure;
+}
+.border-red{
+  border: red;
+}
+input.form-control.my-1.details {
+  height: 100px;
+}
+
+/* side bar */
+
+li{
+  list-style: none;
+}
+.height{
+height: auto;
+position: absolute;
+left: 90%;
+
+}
+#leftToRight{
+  animation: run ease 0.5s;
+  -webkit-animation: run ease 0.5s;
+  -moz-animation: run ease 0.6s;
+  -o-animation: run ease 3s;
+  -ms-animation: run ease 3s;
+}
+
+@keyframes run {
+  0% { margin-left: 100%;}
+  100%{ margin-left: 98%;}
+}
+
+
+.sidebar-option{
+
+  margin: 5px;
+  cursor: pointer;
+
+}
+.sidebar-option:hover{
+  background-color: #F7B103;
+  
+}
