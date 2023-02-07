@@ -6,7 +6,7 @@ import { AuthContext } from '../../Context/UserContext';
 import jwtProvider from '../../Utitlites/jwtProviderWithPost';
 const LogIn = () => {
   const {register,handleSubmit,watch,formState:{errors}}=useForm()
-  const {signIn,setUsers,setAdmin,signInWithGoogle}=useContext(AuthContext)
+  const {signIn,setUsers,setAdmin,signInWithGoogle,signInWithGitHub}=useContext(AuthContext)
   const [loginErrors,setLoginErrors]=useState({
     email:false,
     password:false
@@ -53,7 +53,15 @@ const from=location.state?.from?.pathName || '/'
       // console.log(user)
        await jwtProvider(user)
       
-    })
+    }).catch(err=>console.log(err))
+  }
+  const handleGithub=()=>{
+    signInWithGitHub()
+    .then(async(result)=>{
+      const user=result.user
+      console.log(user)
+      await jwtProvider(user)
+    }).catch(err=>console.log(err) )
   }
     return (
         <section className="vh-100 bg-muted" >
@@ -101,7 +109,7 @@ const from=location.state?.from?.pathName || '/'
                   <i className="fab fa-google-f me-2"></i>Continue with Google
                 </p>
                 <p className="btn btn-primary btn-lg btn-block my-3" style={{backgroundColor: "#55acee"}} 
-                  role="button">
+                  role="button" onClick={handleGithub}>
                   <i className="fab fa-twitter me-2"></i>Continue with Github</p>
                   
               </form>
