@@ -7,7 +7,7 @@ const Users = () => {
     const {data,loading,error}=useFetch()
     const [userData,setUserData]=useState()
     
-    const url='http://localhost:8000/users'
+    const url='http://localhost:8000/totalUsers'
     useEffect(()=>{
         let axiosConfig = {
             headers: {
@@ -16,7 +16,7 @@ const Users = () => {
             },
           };
           axios
-            .post(url, {}, axiosConfig)
+            .get(url, {}, axiosConfig)
             .then((res) => {
               setUserData(res.data)
             })
@@ -30,7 +30,7 @@ const Users = () => {
         return <h2>Loading...</h2>
     }
     const handleUpdate=(ids)=>{
-      axios.patch('http://localhost:8000/userUpdate',{id:ids,status:'Approved'})
+      axios.patch('https://help-bangla-server.vercel.app/userUpdate',{id:ids,status:'Approved'})
       .then(res=>{
         // console.log(res)
         if (res.modifiedCount > 0) {

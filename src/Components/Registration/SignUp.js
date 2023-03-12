@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from "react-router-dom";
@@ -22,6 +23,9 @@ const SignUp = () => {
         createNewUser(email,password)
         .then(result=>{
           const user=result.user
+          axios.post(`http://localhost:8000/totalUsers`,{email:user?.email,name:name})
+          .then(res=>console.log(res.data))
+          .catch(error=>console.log(error))
          setUsers(user)
         })
         

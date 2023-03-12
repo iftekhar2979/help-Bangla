@@ -17,7 +17,7 @@ const Events = () => {
   } = useForm();
   // console.log(myState);
   const { data, loading, error,setData } = useFetch(
-    'http://localhost:8000/totalEvents'
+    'https://help-bangla-server.vercel.app/totalEvents'
   );
   const [show, setShow] = useState(false);
 
@@ -34,7 +34,7 @@ const Events = () => {
       },
     };
     axios
-      .post('http://localhost:8000/addEvents', obj, axiosConfig)
+      .post('https://help-bangla-server.vercel.app/addEvents', obj, axiosConfig)
       .then((res) => {
         console.log('RESPONSE RECEIVED: ', res);
       })
@@ -43,7 +43,7 @@ const Events = () => {
       });
   };
 const handleDelete=(id)=>{
-  axios.delete(`http://localhost:8000/deleteEvent/${id}`)
+  axios.delete(`https://help-bangla-server.vercel.app/deleteEvent/${id}`)
   .then(response => {
    const remaining=data?.filter(item=>item._id!==id)
    setData(remaining)
@@ -53,7 +53,7 @@ const handleDelete=(id)=>{
   });
 }
 const handleSearch=async(search)=>{
-const responce=await postData(`http://localhost:8000/locationEvent?location=${search.search}`)
+const responce=await postData(`https://help-bangla-server.vercel.app/locationEvent?location=${search.search}`)
 // setData(responce)
 }
   return (

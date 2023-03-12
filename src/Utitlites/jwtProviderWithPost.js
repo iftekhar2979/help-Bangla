@@ -2,7 +2,7 @@ import axios from 'axios';
 const jwtProvider = (user) => {
     
   axios
-    .post('http://localhost:8000/jwt', { email: user?.email })
+    .post('https://help-bangla-server.vercel.app/jwt', { email: user?.email })
     .then((res) => {
       if (res.data) {
         localStorage.setItem('token', res.data.token);

@@ -17,14 +17,15 @@ const from=location.state?.from?.pathName || '/'
 // console.log(location);
   const onSubmit=(obj)=>{
     const {email,password}=obj
-    axios.post('http://localhost:8000/login',{email,password})
+    axios.post('https://help-bangla-server.vercel.app/login',{email,password})
     .then(res=>{
         setAdmin(res.data)
-        axios.post('http://localhost:8000/jwt', {email:res.data.email,userName:res.data.user},)
+        axios.post('https://help-bangla-server.vercel.app/jwt', {email:res.data.email,userName:res.data.user},)
       .then(res => {
         if(res.data){
           // console.log(res.data)
           localStorage.setItem("token",res.data.token)
+          setAdmin(res.data)
           sessionStorage.setItem('user',JSON.stringify({email:res.data.email,userName:res.data.userName}))     
         }
       })

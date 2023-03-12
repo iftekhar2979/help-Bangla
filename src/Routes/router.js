@@ -9,6 +9,7 @@ import AdminSignUp from '../Components/Registration/AdminSignUp';
 import LogIn from "../Components/Registration/LogIn";
 import Registration from "../Components/Registration/Registration";
 import Users from "../Components/Users/Users";
+import AdminRoute from "./AdminRoute";
 import PrivateRoute from "./PrivateRoute";
 
 export const router=createBrowserRouter([{
@@ -43,7 +44,7 @@ export const router=createBrowserRouter([{
         },
         {
             path:'/users',
-            element:<PrivateRoute><Users></Users></PrivateRoute>
+            element:<AdminRoute><Users></Users></AdminRoute>
         }
     ]
 }])

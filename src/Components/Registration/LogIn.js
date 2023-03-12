@@ -24,7 +24,7 @@ const from=location.state?.from?.pathName || '/'
       setUsers(user)
       setLoginErrors({email:false,password:false})
       
-      axios.post('http://localhost:8000/jwt', {email:user.email})
+      axios.post('https://help-bangla-server.vercel.app/jwt', {email:user.email})
       .then(res => {
         if(res.data){
           console.log(res.data)

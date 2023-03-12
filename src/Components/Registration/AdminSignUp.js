@@ -18,7 +18,7 @@ const SignUp = () => {
         return 
        }else{
         setError('')
-        axios.post('http://localhost:8000/signup',{email,password,name})
+        axios.post('https://help-bangla-server.vercel.app/signup',{email,password,name})
         .then(res=>{
             console.log(res.data)
         })
